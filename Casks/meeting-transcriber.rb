@@ -7,13 +7,18 @@ cask "meeting-transcriber" do
   desc "Desktop app for Meeting Insights Hub - real-time meeting transcription"
   homepage "https://meeting-insights-hub-production.up.railway.app"
 
-  # Remove quarantine flag (app is not code-signed)
+  # Remove quarantine before and after install (app is not code-signed)
+  preflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{staged_path}/Meeting Transcriber.app"]
+  end
+
+  app "Meeting Transcriber.app"
+
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/Meeting Transcriber.app"]
   end
-
-  app "Meeting Transcriber.app"
 
   zap trash: [
     "~/Library/Application Support/meeting-transcriber",
