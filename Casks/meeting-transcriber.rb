@@ -1,6 +1,6 @@
 cask "meeting-transcriber" do
-  version "1.2.0"
-  sha256 "f293ab6ed8acdf839371d1d3938ff037ff80edee8149d1791657d06c434ac11c"
+  version "1.3.0"
+  sha256 "2c4d93d4e194a97027d9e9bf4447063c2ad9c88d0df8a27b49e545810bf9ce77"
 
   url "https://meeting-insights-hub-production.up.railway.app/api/download/mac"
   name "Meeting Transcriber"
